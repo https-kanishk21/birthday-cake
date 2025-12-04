@@ -77,14 +77,16 @@ const BACKGROUND_FADE_START = Math.max(
 );
 
 const TYPED_LINES = [
-  "> tina",
+  "> hey Lakshita ❤️",
   "...",
-  "> today is your birthday",
+  "> today is your special day",
   "...",
-  "> so i made you this computer program",
+  "> so I made this little surprise for you",
   "...",
+  "> I hope it makes you smile my boondi ka laddu 😊",
   "٩(◕‿◕)۶ ٩(◕‿◕)۶ ٩(◕‿◕)۶"
 ];
+
 const TYPED_CHAR_DELAY = 100;
 const POST_TYPING_SCENE_DELAY = 1000;
 const CURSOR_BLINK_INTERVAL = 480;
@@ -266,25 +268,25 @@ function AnimatedScene({
       <group ref={tableGroup}>
         <Table />
         <PictureFrame
-          image="/frame2.jpg"
+          image="/lak1.jpg"
           position={[0, 0.735, 3]}
           rotation={[0, 5.6, 0]}
           scale={0.75}
         />
         <PictureFrame
-          image="/frame3.jpg"
+          image="/lak2.jpg"
           position={[0, 0.735, -3]}
           rotation={[0, 4.0, 0]}
           scale={0.75}
         />
         <PictureFrame
-          image="/frame4.jpg"
+          image="/lak3.jpg"
           position={[-1.5, 0.735, 2.5]}
           rotation={[0, 5.4, 0]}
           scale={0.75}
         />
         <PictureFrame
-          image="/frame1.jpg"
+          image="/lak4.jpg"
           position={[-1.5, 0.735, -2.5]}
           rotation={[0, 4.2, 0]}
           scale={0.75}
@@ -516,11 +518,15 @@ export default function App() {
   return (
     <div className="App">
       <div
-        className="background-overlay"
-        style={{ opacity: backgroundOpacity }}
-      >
-        <div className="typed-text">
-          {typedLines.map((line, index) => {
+  className="background-overlay"
+  style={{ opacity: backgroundOpacity }}
+>
+  <div
+    className="typed-text"
+    style={{ color: "white", fontSize: "24px", textAlign: "left" }}
+  >
+    {typedLines.map((line, index) => {
+
             const showCursor =
               cursorVisible &&
               index === cursorTargetIndex &&
