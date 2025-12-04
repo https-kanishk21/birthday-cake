@@ -508,6 +508,23 @@ export default function App() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [hasStarted, hasAnimationCompleted, isCandleLit, playBackgroundMusic]);
+    const handleTouch = () => {
+    // Start animation on first tap
+    if (!hasStarted) {
+      playBackgroundMusic();
+      setHasStarted(true);
+      return;
+    }
+
+    // Blow out the candle on tap
+    if (hasAnimationCompleted && isCandleLit) {
+      setIsCandleLit(false);
+      setFireworksActive(true);
+    }
+  };
+
+  window.addEventListener("touchstart", handleTouch);
+
 
   const handleCardToggle = useCallback((id: string) => {
     setActiveCardId((current) => (current === id ? null : id));
